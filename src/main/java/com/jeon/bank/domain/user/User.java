@@ -33,7 +33,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private UserEnum userEnum; // ADMIN, CUSTOMER
+    private UserEnum role; // ADMIN, CUSTOMER
 
     @CreatedDate // Insert
     @Column(nullable = false)
@@ -44,13 +44,13 @@ public class User {
     private LocalDateTime updatedAt;
 
     @Builder
-    public User(Long id, String username, String password, String email, String fullname, UserEnum userEnum, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(Long id, String username, String password, String email, String fullname, UserEnum role, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.fullname = fullname;
-        this.userEnum = userEnum;
+        this.role = role;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
